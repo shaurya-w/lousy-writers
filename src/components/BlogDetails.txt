@@ -1,0 +1,15 @@
+import { useParams } from 'react-router-dom';
+import blogPosts from '../data/blogData';
+
+function BlogDetail() {
+  const { id } = useParams();  // like "1" or "2"
+  const post = blogPosts.find((p) => p.id === id);
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.date}</p>
+      <p>{post.content}</p>
+    </div>
+  );
+}
