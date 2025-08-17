@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));   
+
+/*“When I use the dark: variant, only apply the rule if the element is .dark or if it’s inside an element with .dark.”*/
+
+@theme {
+  --color-ogyellow: #fffe69;
+  --color-fgd: #fffe69; /* yellow */
+  --color-nav: #2d2c2d; 
+  --color-bgd: #e5e7eb;
+}
+
+.dark {   /*this will overwrite the default theme
+  (#E0E0E0, #CCCCCC*/
+  --color-ogyellow: #fffe69;
+  --color-fgd: #2d2c2d;
+  --color-nav: #fffe69;
+  --color-bgd: #2d2c2d;
+}
+
+
