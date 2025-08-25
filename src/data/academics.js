@@ -1,31 +1,60 @@
 export const blogs = [
   {
     id: 1234,
-    slug: "learning-how-to-drive",
-    title: "Learning how to drive",
-    subtitle: "It's all fun and games until its time to parallel park",
+    slug: "semester-1-overview",
+    title: "Semester 1 Overview",
+    subtitle: "Welcome to Engineering?",
     date: "August 15, 2025",
     content: `
-I don’t know — maybe it was just me, or maybe everyone is equally giddy when they first learn to drive a car.
+-> Subject: Applied Mathematics 
+Marks allocation: 125 marks (UT-1 & UT-2: 20+20, Term work: 25, End semester: 60)
 
-In my head, the idea of driving was cinematic: me on a highway, wind rushing, music blasting, adrenaline high. I wasn’t starting from zero, either. I’d been riding an Activa for a while, so I did have some experience with the road. My father himself taught me how to ride an Activa, but this time he wanted me to take formal training from a driving school since they have a car with an extra set of clutch and brake. Thus began training school.
+-Books/References: G.V. Kumbhojkar (available in the library/online, avoid buying it). Go through the solved examples from the book and you’re good to go. Don’t go for the exercises in this book, it would be really time-consuming. For UT’s, solve the question banks that will be provided by the faculty. Personally, for end semester, we had 5-6 days study leave (since maths is the first paper) so I solved the solved examples from Kumbhojkar during that time and some PYQs. 
 
-On Day 1, the instructor gave me a quick introduction to how a car works. The most important lesson I found was that you should listen to your vehicle; it will tell you if something’s wrong or if the gears need to be changed. 
+-> Subject: Applied Chemistry 
+Marks Allocation: (UT-1 & UT-2: 15+15, Term work: 25, End semester: 45)
 
-The next lesson was the pickup — I was told that the first impression you make as a new driver depends on this. Pickup means starting the car, and if you’ve ever tried balancing a light switch exactly in the middle… well, the pickup felt exactly like that. You have to release the clutch neither too slowly nor too quickly, because you’ll stall either way. Stalling is basically when your car stops abruptly (and makes you question everything). On Day 2, as instructed, I pressed the clutch and set the gear to first. I then lightly touched the accelerator and released the clutch slooooooooowly. The car started moving, and I had a wide grin on my face.
-Slowly, as the days passed, we kept moving up the gears one by one. I’d come home and yap excitedly, saying things like, “I went up to the 4th gear today!” 
+-Lectures: Totally up to you whether to attend (and also up to your ability to not fall asleep during a theory lecture)
+-Books/References: Vandana ma'am’s notes and Techknowledge. 
+-Note: All of the studying for this subject was done just days before the end semester exam because one can’t obviously retain theory for that long. Go through previous year papers to know which topics are more important and to know how the questions will be asked.
 
-On the 10th day, my dad let me drive our car. He drove up to the coastal road, and then we switched places. I’m pretty sure he was tense — let’s be real, it was his first time helping someone drive while sitting in the passenger seat; his hand hovering over the handbrake every now and then, just in case. After all, they don’t cover “brand-new driver behind the wheel” as a factor in car insurance. The pickup was smooth (thank God!), and the overall drive too. It felt amazing.
+-> Subject: Applied Physics 
+Marks Allocation: (UT-1 & UT-2: 15+15, Term work: 25, End semester: 45)
 
-But the coastal road ended — which is essentially a highway — and we returned to normal, busy roads. Now, I’m at a signal, first in line, and the light turns green. I stall. My dad says, “Okay, try again.” I do… and stall again. The signal turns red. I take a deep breath. Green again — stall again. By now, the honking behind me had reached full symphony level, and it turned into a road rage situation real quick. (This was the kind of main character moment you don’t want.) My dad and I switched places.
-It was a little disappointing, but that day I consoled myself by saying: Maybe my pickup still needs work, but my pickup lines are already in top gear, or something mildly reassuring of that sort. I also made a promise to myself: I will never be impatient and honk at a new driver if they stall. I’ll just hit reverse, overtake them, and maybe even cheer them up as I pass if that isn’t too distracting.
+-Lectures: Totally up to you and your ability to not fall asleep during a theory lecture. 
+-Books/References: Techneo/Techknowledge and honestly some random pdfs that will pop up on unofficial groups before the exam.  
+-Note: (most of the studying for this subject was done just days before the end semester exam for better retention of theory). Go through previous year papers to know which topics are more important and to know how the questions will be asked.
 
-So the training lessons continued. Our usual route was short at first, and then it expanded to include bridges, too. That’s where the half-clutch and handbrake lessons came into practice. We even practiced reverse for a few sessions, and later I learned angular and parallel parking as well. As I write this today, I’ve gained more confidence in driving overall, though parallel parking will take some time. Until then, I’ll be parking with someone guiding me. Now my dad insists I keep practicing regularly — so yes, we do go on late-night drives frequently.
+-> Subject: Engineering Mechanics
+Marks Allocation: 150 marks (UT-1 & UT-2: 20+20, Term work: 25, End semester: 60, Viva: 25)
 
-The driving test (14th Aug '25):
- You know, I've heard that if you can drive in India, you can drive anywhere in the world. I do not know whether there is actual data to back this theory up, but honestly, it could be true. The thing is, many people get their licenses without a test, but are we not putting people's safety at risk by doing so?
+-Books/References: The booklet that is provided by the college. Need to prepare that for UTs unless faculty says otherwise. For end semesters: PYQs practice. 
+-Note: It is a subject where some people lose a lot of marks even after studying so practice as much as you can. This is the subject where I would advise not doing things last minute. 
 
-My test included me driving with my examiner, who was a lady police officer in the passenger seat. She asked me to start the car and drive in a circle bounded by cones on either side. That's it. Now, finally, when the licence arrives, that will mark the official completion of this side quest. I shall then go around telling people "I got my driver's license last week, just like we always talked about," which, by the way, I’ve been dying to reference for ages:)
-`
+-> Subject : Basic Electronic and Electrical Engineering 
+Marks Allocation: 150 marks (UT-1 & UT-2: 20+20, Term work: 25, End semester: 60, Viva: 25)
+
+-Labs/Practicals: Attend on allocated days (be as unproblematic as possible (internal KTs are a thing)) and submit journals/assignments on time. Assignments will have circuit sums so utilize those for practice. 
+-Lectures: Must attend (unless you don’t understand). 
+-Books/References: Ravi Singh (available in library) solved examples for AC/DC sums. Matthew sir’s notes for transformers, motors, etc. PYQs practice. 
+-Note: It is a subject where some people lose a lot of marks even after studying so practice as much as you can. This is the subject where I would advise not doing things last minute. For viva, the professor/external can ask anything from the syllabus (even tricky questions so make sure your concepts are clear. You will often be given a choice: they will ask which one’s your strongest topic so you can rely on that too). 
+
+Subject: Professional Communication and Ethics 
+Marks allocation: 100 marks (Internal: 30, Term work: 25, End semester: 45)
+s
+-Labs/Practicals: This is where we used to be given comprehension and reading assignments. These assignments will be graded for term work. Try not to skip tutorials because end-semester submissions will become hectic. 
+-Lectures: No comments :|
+-Books/References: Material provided by respective faculty. 
+-Note: For internals, you might have to give a speech/presentation depending on what your faculty decides. 
+
+Subject: C Programming
+-Marks allocation: 50 marks (Practical exam + viva: 25, Term work: 25)
+
+-Practical exam: There will be a list of experiments that will be given to you from which you will be expected to execute a program on the day of the practical exam. Our faculty had chits for all the programs and you had to choose one from it. (I had gotten sorting of a structure, by the way.)
+-Note: Study C properly as it will be a required prerequisite for many things that will come up in semester 2 as well as 3. As long as you keep up with the labs and practice before practical exam, we’re good to go. 
+
+Subject: Workshop and UHV – 25 marks each (no theory exam)
+
+In conclusion, 1st semester will be over before you know it. It felt like a short semester since CAP rounds lasted till September. `
   },
 ]; 

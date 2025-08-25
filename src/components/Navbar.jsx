@@ -13,15 +13,15 @@ function Navbar() {
       <nav>
         {/* Top Navbar */}
         <div className="flex justify-between items-center fixed top-0 w-full h-[12vh] bg-nav text-fgd z-5 px-4 drop-shadow-xs drop-shadow-black dark:drop-shadow-gray">
-          <p className="font-semibold font-saira -rotate-[5deg] text-[4.5vh] text-shadow-[#00d577] text-shadow-md tracking-tighter whitespace-nowrap max-w-[55vw] relative bottom-0.5">LOUSY WRITERS</p>
+          <p className="font-semibold font-sans -rotate-[5deg] text-[4.5vh] text-shadow-green-600 text-shadow-lg tracking-tighter whitespace-nowrap max-w-[55vw] relative bottom-0.5">LOUSY WRITERS</p>
 
           {/* Right side: Desktop Menu + Icons */}
           <div className="flex items-center space-x-4">
             {/* Desktop Menu */}
-            <ul className="hidden lg:flex justify-between items-center w-[30vw] text-[2.5vh] font-semibold tracking-normal">
+            <ul className="hidden lg:flex justify-between items-center w-[30vw] text-[2.5vh] font-semibold tracking-normal font-mono">
               <li><Link className="relative after:-translate-x-1/2 after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-fgd after:transition-all after:duration-400 hover:after:w-full" to="/academics">academics</Link></li>
-              <li><Link className="relative after:-translate-x-1/2 after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-fgd after:transition-all after:duration-400 hover:after:w-full" to="/academics" to="/tech">tech</Link></li>
-              <li><Link className="relative after:-translate-x-1/2 after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-fgd after:transition-all after:duration-400 hover:after:w-full" to="/academics" to="/sidequests">side quests</Link></li>
+              <li><Link className="relative after:-translate-x-1/2 after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-fgd after:transition-all after:duration-400 hover:after:w-full" to="/tech">tech</Link></li>
+              <li><Link className="relative after:-translate-x-1/2 after:absolute after:left-1/2 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-fgd after:transition-all after:duration-400 hover:after:w-full mr-2.5" to="/sidequests">side quests</Link></li>
             </ul>
 
             {/* Moon Icon */}

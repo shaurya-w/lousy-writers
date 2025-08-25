@@ -8,7 +8,7 @@
   --color-ogyellow: #fffe69;
   --color-fgd: #fffe69; /* yellow */
   --color-nav: #2d2c2d; 
-  --color-bgd: #e5e7eb;
+  --color-bgd: #ffffff;
 }
 
 .dark {   /*this will overwrite the default theme
