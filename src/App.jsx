@@ -5,7 +5,7 @@ import Academics from './pages/Academics';
 import Tech from './pages/Tech'; 
 import Sidequests from './pages/Sidequests';
 import NotFound from './pages/NotFound';
-import BlogPost from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
