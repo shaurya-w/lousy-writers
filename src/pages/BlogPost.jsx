@@ -20,8 +20,8 @@ const BlogPost = () => {
   if (!blog) return <NotFound />;
 
   return (
-    <div className="bg-bgd text-black dark:text-white/80 inset-0">
-      <div className="flex w-[80vw] lg:w-[75vw] mx-auto pt-[12.5vh] pb-[100px]">
+    <div className="bg-bgd text-black dark:text-white/90 inset-0">
+      <div className="flex w-[80vw] lg:w-[75vw] mx-auto pt-[12.5vh] pb-[95px]">
         <div className="mt-7">
           <h1 className="text-left font-bold text-[25px]">{blog.title}</h1>
           <hr className="mt-[10px]" />

@@ -9,8 +9,12 @@ const Intro = () => {
         <img src={pfp} alt="pfp-shaurya" className="object-cover w-full h-full" />
     </div>
 
-    <p className="text-justify font-mono tracking-normal">
-        Hello there! I'm Shaurya Wajge, a computer engineering student who loves trying out new things. I've never heard about a cat being killed out of sheer curiosity. Hence my quest to explore my interests continues. I hope you have a good time reading about my experiences as I navigate college, tech....and life in general. It's nice to have you here!
+    <p className="text-justify font-mono tracking-normal whitespace-pre-line">
+        Hello there! I'm Shaurya Wajge, a computer engineering student who loves trying out new things — whether it’s exploring tech, experimenting with ideas, or just following where curiosity takes me.
+
+        You’ve probably heard the saying “curiosity killed the cat.” I like to think of it differently: curiosity keeps me moving forward. It’s what drives me to keep exploring, building, and growing.
+
+        I hope you have a good time reading about my experiences as much as I enjoy writing about them. It's nice to have you here!
     </p>
     </div>
 
