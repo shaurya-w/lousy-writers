@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center bg-nav w-full py-4 space-y-3 fixed bottom-0">
+    <footer className="flex flex-col justify-center items-center bg-nav w-full py-4 space-y-3 h-[10vh] md:h-[13vh] fixed bottom-0">
       {/* Social icons */}
       <div className="flex flex-row flex-wrap justify-center space-x-3">
         <Link to="https://www.linkedin.com/in/shaurya-wajge-32047831b/">
