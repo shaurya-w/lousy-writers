@@ -22,10 +22,10 @@ It was a little disappointing, but that day I consoled myself by saying: Maybe m
 
 So the training lessons continued. Our usual route was short at first, and then it expanded to include bridges, too. That’s where the half-clutch and handbrake lessons came into practice. We even practiced reverse for a few sessions, and later I learned angular and parallel parking as well. As I write this today, I’ve gained more confidence in driving overall, though parallel parking will take some time. Until then, I’ll be parking with someone guiding me. Now my dad insists I keep practicing regularly — so yes, we do go on late-night drives frequently.
 
-The driving test (14th Aug '25):
+The driving test :
  You know, I've heard that if you can drive in India, you can drive anywhere in the world. I do not know whether there is actual data to back this theory up, but honestly, it could be true. The thing is, many people get their licenses without a test, but are we not putting people's safety at risk by doing so?
 
-My test included me driving with my examiner, who was a lady police officer in the passenger seat. She asked me to start the car and drive in a circle bounded by cones on either side. That's it. Now, finally, when the licence arrives, that will mark the official completion of this side quest. I shall then go around telling people "I got my driver's license last week, just like we always talked about," which, by the way, I’ve been dying to reference for ages:)
+My test included me driving with my examiner, who was a lady police officer seated in the passenger seat. She asked me to start the car and drive in a circle bounded by orange cones on either side. That's it. Now, finally, when the licence arrives, that will mark the official completion of this side quest. I shall then go around telling people "I got my driver's license last week!" which, by the way, I’ve been dying to reference for ages:)
 `
   },
 ]; 
