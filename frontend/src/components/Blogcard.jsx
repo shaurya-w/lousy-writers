@@ -8,7 +8,7 @@ function Blogcard({ blog }) {
   };
 
   return (
-    <div className="flex flex-col justify-evenly space-y-2.5 bg-ogyellow h-[180px] w-full rounded-2xl shadow-lg p-6 text-black transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+    <div className="flex flex-col justify-evenly space-y-2.5 bg-ogyellow h-[180px] w-full rounded-2xl shadow-lg p-6 text-black transition-transform duration-300 hover:scale-105 hover:shadow-lg" data-aos="flip-right">
       <div className="flex flex-wrap whitespace-normal font-bold">
         <h1 className="text-lg tracking-wide">{blog.title}</h1>
       </div>

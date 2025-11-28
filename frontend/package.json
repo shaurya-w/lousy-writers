@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@readyplayerme/react-avatar-creator": "^0.5.0",
     "@tailwindcss/vite": "^4.1.10",
+    "aos": "^2.3.4",
+    "axios": "^1.13.2",
     "gray-matter": "^4.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

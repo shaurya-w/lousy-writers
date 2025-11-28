@@ -12,7 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<MainLayout />}>
-          <Route index element={<Home />}/>        {/*default content inside mainlayout*/}
+          <Route index element={<Home />}/>      {/*default content inside mainlayout*/}
           <Route path="academics" element={<Academics />}/> 
           <Route path="tech" element={<Tech />}/>           
           <Route path="sidequests" element={<Sidequests />}/>
