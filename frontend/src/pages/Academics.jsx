@@ -12,7 +12,8 @@ import axios from 'axios';
   useEffect(()=>{
     try{
       axios.get(`${BASE_URL}/api/posts/academics`)
-      .then((res)=>{setPosts(res.data)})
+      .then((res)=>{setPosts(res.data)
+        console.log(posts)})
       .catch((err)=>console.log(err))
     }catch(err){
       console.log(err)
