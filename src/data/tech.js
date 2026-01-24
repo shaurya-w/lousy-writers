@@ -34,4 +34,57 @@ Learning Git and GitHub through this project has been incredibly fruitful. I've 
 I thought deploying your website had a steep learning curve and would take a lot of time, and once you've deployed, nothing could be changed. But I was glad to be mistaken. One of my friends told me deploying on Vercel takes up no more than 5 minutes, since it pulls the code directly from your GitHub repository.  So — dramatic pause — I finally deployed the project and opened the link on my phone. That moment felt really great (after fixing a few responsiveness issues, obviously). But in hindsight, I think that’s development in a nutshell: thinking you’re completely stuck until suddenly, you’re not.
 `
   },
+
+  {
+    id: 5678,
+    slug: "the-first-time-deployment-fought-back",
+    title: "The First Time Deployment Fought Back",
+    subtitle: "How a slow-loading website introduced me to new concepts",
+    date: "January 24, 2026",
+    content: `
+Once upon a time, everything on this blog website worked.
+
+The site loaded, the UI felt fine, the blogs existed. Except when you opened the website, the blogs took 15–20 seconds to show up. I assumed maybe there was something wrong with the code. Turns out, it wasn’t the case.
+
+# The Existing Setup
+
+My setup was simple:
+- Frontend on Vercel
+- Backend on Render
+- Database on MongoDB
+
+The frontend loaded instantly, but the backend took its time responding, especially on the first request after some inactivity. This wasn’t a bug. It was something known as a “cold start.”
+
+# Cold Starts: A New Concept Unlocked
+
+On Render’s free tier, backend servers go to sleep when they’re idle. When a request comes in later, the server has to wake up, reload dependencies, reconnect to the database, and only then process the request. That “wake up” time was responsible for the delay. Once the server was up, everything felt fast again, until it again went idle after some inactivity.
+
+# Why “Just Pay for It” Isn’t Always the Answer
+
+I thought I would have to upgrade to a paid plan that keeps the server running. But as a student, taking up a billing plan isn’t really feasible, and honestly, not recommended when you don’t fully understand how pricing works yet. Server costs aren’t just monthly subscriptions. They depend on compute time, memory usage, requests, execution duration, etc.
+
+# Going Serverless
+
+My friends suggested making the backend "serverless". At first, that sounded like “no servers at all,” which made no sense. Turns out, it just means servers exist, but you don’t manage them. The platform handles the execution for you. Since my frontend was already deployed on Vercel, moving backend logic there started to feel like a natural next step. On Render, my backend was a long-running server that went to sleep on the free tier, causing slow cold starts when it had to wake up again. But with serverless on Vercel, there’s no always-on server and each request just runs a function on demand and shuts down after, which is much lighter. 
+
+# Why Next.js Fits This Setup
+
+So now switching to Next.js and deploying everything on Vercel made the most sense. Having the frontend, backend API routes, and deployment in a single codebase feels cleaner than juggling multiple services. Since my frontend is already on Vercel, moving the backend logic there just reduces friction. 
+
+Of course, this does mean leaning more into the Vercel ecosystem, which introduces the idea of "vendor lock-in", another term I hadn’t really thought about before all this. When your app starts depending heavily on platform-specific features, moving away later can get tricky.
+
+The upside to this is learning how to reuse my existing code, organize it properly in a Next.js project, and actually understand how everything fits together. That said, we’ll cross the Vercel “vendor lock-in problem" bridge when we get to it.
+
+# A Temporary Fix
+
+While figuring this out, I temporarily deployed a previous stable version of the site that relied on locally stored blog data. Not ideal, but better than a site that feels broken.
+
+## What I Took Away From This
+
+This wasn’t just a performance issue. It was my introduction to deployment: cold starts, hosting tiers, pricing models, and architectural decisions. Things I hadn’t really thought about until now.
+
+I’m still learning this side of development, but that’s part of the process. Sometimes, the most useful lessons show up after you've hit deploy.
+    `
+
+  }
 ]; 
