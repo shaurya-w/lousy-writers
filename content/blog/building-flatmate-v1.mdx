@@ -5,6 +5,7 @@ subtitle: Product breakdown and pain points
 category: tech
 coverImage: ""
 ---
+import Image from 'next/image'
 
 Most housing societies still run on paper, WhatsApp forwards, spreadsheets, and manual payment entries.
 
@@ -50,7 +51,12 @@ Since this is a **recurring monthly workflow**, I wanted to design it with that 
 
 So I started building **FlatMate :** a system for managing communities and their day-to-day whereabouts. 
 
-[logo image]
+<Image 
+  src="/flatmate_logo.png" 
+  alt="logo" 
+  width={800} 
+  height={500} 
+/>
 
 The idea is simple:
 
@@ -69,6 +75,4 @@ Admins get tools to:
 - automatically send invoices as PDFs via email with a single click
 
 This is a work-in-progress, and I’m documenting the journey as I build.
-
-Coming up next: breaking down the architecture and database design.
 Stay tuned!
