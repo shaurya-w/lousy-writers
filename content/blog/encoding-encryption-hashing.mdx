@@ -1,0 +1,94 @@
+---
+title: Encoding, Encryption, Hashing
+date: 2026-02-28
+subtitle: How are passwords stored on the internet?
+category: tech
+coverImage: ""
+---
+
+As I was learning about authentication, I came across these concepts and found them really interesting.
+
+---
+
+## Encoding
+
+Encoding converts data into another format for safe transmission.
+
+It is **not used for security**.
+
+Example:
+
+Hello → SGVsbG8=
+
+Encoding is reversible. Anyone can decode it.
+
+### Used for:
+
+- formatting binary data  
+- sending files via APIs  
+- embedding data in JSON  
+
+> Encoding should NEVER be used for passwords.
+
+---
+
+## Hashing
+
+Hashing converts data into a fixed-length string.
+
+It is **one-way**.
+
+Example:
+
+password123 → ef92b778bafe771e...
+
+You cannot retrieve the original password.
+
+### Login process:
+
+- user enters password  
+- system hashes it  
+- compares with stored hash  
+
+If they match → access granted
+
+---
+
+### Salts
+
+If two users have the same password:
+
+They still get different hashes.
+
+Why?
+
+Because of salts:
+
+password123 + random_salt → hash
+
+---
+
+## Encryption
+
+Encryption keeps data **secure but readable with a key**.
+
+Used in:
+
+- messaging (e.g. WhatsApp)  
+- HTTPS (TLS)  
+- files and databases  
+
+Unlike hashing:
+
+✔ reversible (with key)  
+❌ not one-way  
+
+---
+
+## Conclusion
+
+- Encoding → formatting  
+- Hashing → password protection  
+- Encryption → secure communication  
+
+Together, they form the backbone of modern security systems.

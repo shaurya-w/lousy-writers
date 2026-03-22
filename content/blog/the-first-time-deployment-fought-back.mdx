@@ -1,0 +1,112 @@
+---
+title: The First Time Deployment Fought Back
+date: 2026-01-24
+subtitle: How a slow-loading website introduced me to new concepts
+category: tech
+coverImage: ""
+---
+
+Once upon a time, everything on this blog worked.
+
+Except… it took 15–20 seconds for blogs to load.
+
+---
+
+## The Setup
+
+- Frontend → Vercel  
+- Backend → Render  
+- Database → MongoDB  
+
+Frontend was instant.
+
+Backend? Not so much.
+
+---
+
+## Cold Starts
+
+Render’s free tier puts servers to sleep.
+
+When a request comes in:
+
+- server wakes up  
+- dependencies reload  
+- DB reconnects  
+
+That delay = cold start.
+
+---
+
+## The Problem
+
+Everything worked…
+
+But only after waiting.
+
+---
+
+## The Realization
+
+Paying for a plan felt like the obvious fix.
+
+But:
+
+- pricing is complex  
+- depends on usage  
+- not ideal for a student  
+
+---
+
+## Going Serverless
+
+Serverless ≠ no servers.
+
+It means:
+
+> You don’t manage them.
+
+Each request runs a function → then shuts down.
+
+---
+
+## Why Next.js Made Sense
+
+- frontend already on Vercel  
+- backend can move to API routes  
+- single codebase  
+
+Cleaner. Simpler.
+
+---
+
+## The Tradeoff
+
+Vendor lock-in.
+
+Relying heavily on one platform can make switching harder later.
+
+---
+
+## Temporary Fix
+
+Deployed an older version using local blog data.
+
+Not perfect.
+
+But better than slow.
+
+---
+
+## What I Learned
+
+This wasn’t just a bug.
+
+It introduced me to:
+
+- deployment  
+- cold starts  
+- hosting models  
+- architecture decisions  
+
+Sometimes the real learning begins after you hit deploy.
