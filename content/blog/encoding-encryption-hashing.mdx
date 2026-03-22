@@ -5,90 +5,106 @@ subtitle: How are passwords stored on the internet?
 category: tech
 coverImage: ""
 ---
+import Image from 'next/image'
 
-As I was learning about authentication, I came across these concepts and found them really interesting.
+As I was learning about authentication and how passwords are stored, I came across these concepts which I found really interesting. So naturally, I had to share them.
 
 ---
 
-## Encoding
+# Encoding
 
-Encoding converts data into another format for safe transmission.
+Encoding is basically converting data into another format so that it can be safely transmitted or stored.
 
-It is **not used for security**.
+Encoding is not used for security. It simply transforms data to a standard format for transmission.
 
-Example:
+A common example is Base64 encoding.
+
+## Example
 
 Hello → SGVsbG8=
 
-Encoding is reversible. Anyone can decode it.
+The important thing to understand is that encoding is reversible and anyone can decode encoded data without needing a secret key. Interestingly enough, we did learn about this in our Math class last semester.
 
-### Used for:
+## Encoding is mainly used for
 
-- formatting binary data  
-- sending files via APIs  
-- embedding data in JSON  
+• Formatting binary data into text  
+• Sending files or images through APIs  
+• Safely transmitting data through formats like JSON over HTTP  
 
-> Encoding should NEVER be used for passwords.
-
----
-
-## Hashing
-
-Hashing converts data into a fixed-length string.
-
-It is **one-way**.
-
-Example:
-
-password123 → ef92b778bafe771e...
-
-You cannot retrieve the original password.
-
-### Login process:
-
-- user enters password  
-- system hashes it  
-- compares with stored hash  
-
-If they match → access granted
+For example, when binary data like images or files needs to be included inside JSON responses, it is often Base64 encoded so it can be transmitted as text. Because encoding is easily reversible, it should never be used to store passwords or protect sensitive information.
 
 ---
 
-### Salts
+# Hashing
 
-If two users have the same password:
+Hashing converts data into a fixed length string using mathematical functions.
 
-They still get different hashes.
+Unlike encoding, hashing is designed to be one way. Speaking in chemistry like terms, it is an irreversible reaction. Once passwords are hashed, you cannot retrieve the original password from the generated string.
 
-Why?
+A commonly used hashing algorithm for passwords is bcrypt. In Node.js projects, developers often install it using **npm install bcrypt.**
 
-Because of salts:
+## Example
+
+password123 → ef92b778bafe771e89245b89ecbc08a4…
+
+Here, your password is stored as this generated string in the database, and the original password password123 is never saved.
+
+## During login
+
+• The user enters their password  
+• The system hashes it again  
+• The new hash is compared with the stored hash  
+• If they match, the password is correct  
+
+That is why when recovering passwords, websites never say:
+
+"Oh! Hi, you forgetful little thing, here’s your password: password123."
+
+Instead, they redirect you to your email and ask you to reset a new password. Long story short, if you forget password123, there is no way to retrieve it, only to reset it.
+
+Even I, as the developer, cannot see the user’s password and I can only authenticate the user if their generated hash matches the one in the database.
+
+## What if multiple users have the same password
+
+This is where salts come in.
+
+Salts are random strings mixed with the password before hashing:
 
 password123 + random_salt → hash
 
----
+So for testing purposes, all the users in my database have the same password so I can log in easily without remembering different passwords. But if you notice even though the passwords are the same, their hashed strings are different. That happens because of salts.
 
-## Encryption
-
-Encryption keeps data **secure but readable with a key**.
-
-Used in:
-
-- messaging (e.g. WhatsApp)  
-- HTTPS (TLS)  
-- files and databases  
-
-Unlike hashing:
-
-✔ reversible (with key)  
-❌ not one-way  
+*Here's the example from my project database:*
+<Image 
+  src="/hashed_password_db.jpeg" 
+  alt="My image" 
+  width={800} 
+  height={500} 
+/>
 
 ---
 
-## Conclusion
+# Encryption
 
-- Encoding → formatting  
-- Hashing → password protection  
-- Encryption → secure communication  
+Have you ever opened WhatsApp and seen the message: End to end encrypted? Or maybe you’ve seen the famous WhatsApp advertisement explaining how your data stays private.
 
-Together, they form the backbone of modern security systems.
+Encryption is used when data must remain confidential but still retrievable. You cannot use hashing here because when you send a message, it must be readable on the other end. Unlike hashing, encrypted data can be reversed if the correct key is available. Hence encryption is used here.
+
+Encryption transforms readable data into an unreadable format using a secret key and only someone with the correct key can decrypt the data.
+
+All kinds of media, text, images, files, PDFs and even calls can be encrypted.
+
+## Encryption is commonly used for
+
+• Securing messages  
+• Protecting sensitive files  
+• Safeguarding data in databases  
+• Securing communication over HTTPS  
+
+For example, Transport Layer Security TLS encrypts communication between browsers and servers. If you ever visit a website and see the padlock icon in your browser, it means TLS is being used to secure the connection. Most websites today use TLS.
+
+---
+
+# To conclude
+
+Encoding helps format data, hashing protects passwords, and encryption ensures confidentiality. Together, these techniques form the foundation of modern security systems used across the internet. Knowing these concepts is essential because user data needs to remain protected even if the database is compromised.

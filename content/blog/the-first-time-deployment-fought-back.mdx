@@ -6,107 +6,60 @@ category: tech
 coverImage: ""
 ---
 
-Once upon a time, everything on this blog worked.
+# Once upon a time, everything on this blog website worked.
 
-Except… it took 15–20 seconds for blogs to load.
-
----
-
-## The Setup
-
-- Frontend → Vercel  
-- Backend → Render  
-- Database → MongoDB  
-
-Frontend was instant.
-
-Backend? Not so much.
+The site loaded, the UI felt fine, the blogs existed. Except when you opened the website, the blogs took 15 to 20 seconds to show up. I assumed maybe there was something wrong with the code. Turns out, it wasn’t the case.
 
 ---
 
-## Cold Starts
+# The Existing Setup
 
-Render’s free tier puts servers to sleep.
+My setup was simple:
 
-When a request comes in:
+• Frontend on Vercel  
+• Backend on Render  
+• Database on MongoDB  
 
-- server wakes up  
-- dependencies reload  
-- DB reconnects  
-
-That delay = cold start.
+The frontend loaded instantly, but the backend took its time responding, especially on the first request after some inactivity. This wasn’t a bug. It was something known as a “cold start.”
 
 ---
 
-## The Problem
+# Cold Starts: A New Concept Unlocked
 
-Everything worked…
-
-But only after waiting.
+On Render’s free tier, backend servers go to sleep when they’re idle. When a request comes in later, the server has to wake up, reload dependencies, reconnect to the database, and only then process the request. That “wake up” time was responsible for the delay. Once the server was up, everything felt fast again, until it again went idle after some inactivity.
 
 ---
 
-## The Realization
+# Why “Just Pay for It” Isn’t Always the Answer
 
-Paying for a plan felt like the obvious fix.
-
-But:
-
-- pricing is complex  
-- depends on usage  
-- not ideal for a student  
+I thought I would have to upgrade to a paid plan that keeps the server running. But as a student, taking up a billing plan isn’t really feasible, and honestly, not recommended when you don’t fully understand how pricing works yet. Server costs aren’t just monthly subscriptions. They depend on compute time, memory usage, requests, execution duration, etc.
 
 ---
 
-## Going Serverless
+# Going Serverless
 
-Serverless ≠ no servers.
-
-It means:
-
-> You don’t manage them.
-
-Each request runs a function → then shuts down.
+My friends suggested making the backend "serverless". At first, that sounded like “no servers at all,” which made no sense. Turns out, it just means servers exist, but you don’t manage them. The platform handles the execution for you. Since my frontend was already deployed on Vercel, moving backend logic there started to feel like a natural next step. On Render, my backend was a long running server that went to sleep on the free tier, causing slow cold starts when it had to wake up again. But with serverless on Vercel, there’s no always on server and each request just runs a function on demand and shuts down after, which is much lighter.
 
 ---
 
-## Why Next.js Made Sense
+# Why Next.js Fits This Setup
 
-- frontend already on Vercel  
-- backend can move to API routes  
-- single codebase  
+So now switching to Next.js and deploying everything on Vercel made the most sense. Having the frontend, backend API routes, and deployment in a single codebase feels cleaner than juggling multiple services. Since my frontend is already on Vercel, moving the backend logic there just reduces friction.
 
-Cleaner. Simpler.
+Of course, this does mean leaning more into the Vercel ecosystem, which introduces the idea of "vendor lock in", another term I hadn’t really thought about before all this. When your app starts depending heavily on platform specific features, moving away later can get tricky.
 
----
-
-## The Tradeoff
-
-Vendor lock-in.
-
-Relying heavily on one platform can make switching harder later.
+The upside to this is learning how to reuse my existing code, organize it properly in a Next.js project, and actually understand how everything fits together. That said, we’ll cross the Vercel “vendor lock in problem" bridge when we get to it.
 
 ---
 
-## Temporary Fix
+# A Temporary Fix
 
-Deployed an older version using local blog data.
-
-Not perfect.
-
-But better than slow.
+While figuring this out, I temporarily deployed a previous stable version of the site that relied on locally stored blog data. Not ideal, but better than a site that feels broken.
 
 ---
 
-## What I Learned
+# What I Took Away From This
 
-This wasn’t just a bug.
+This wasn’t just a performance issue. It was my introduction to deployment: cold starts, hosting tiers, pricing models, and architectural decisions. Things I hadn’t really thought about until now.
 
-It introduced me to:
-
-- deployment  
-- cold starts  
-- hosting models  
-- architecture decisions  
-
-Sometimes the real learning begins after you hit deploy.
+I’m still learning this side of development, but that’s part of the process. Sometimes, the most useful lessons show up after you've hit deploy.
