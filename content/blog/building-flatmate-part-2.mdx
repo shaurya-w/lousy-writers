@@ -1,0 +1,114 @@
+---
+title: Building FlatMate - Part 2
+date: "2026-03-27"
+subtitle: "Architecture and Database design"
+category: tech
+coverImage: ""
+---
+
+import Image from 'next/image'
+
+In the last post, I talked about *why* I started building FlatMate.
+
+This time, I wanted to share *how I’m thinking about designing it.*
+
+---
+
+## Breaking it down simply
+
+At a high level, FlatMate follows a pretty straightforward flow:
+
+**User → Frontend → Backend → Database → Response back to user**
+
+Residents or admins interact with the UI, actions go to the backend, data is processed, and the result comes back.
+
+Simple on paper — but the interesting part is how you structure each layer.
+
+---
+
+## The stack I went with
+
+- **Frontend:** Next.js  
+- **Backend:** Spring Boot  
+- **Database:** PostgreSQL (via Supabase)
+
+Now the obvious question:
+
+*Why not just build everything in Next.js? Why split the backend?*
+
+Once you start thinking in terms of **workflows and business logic**, things can get messy if everything lives in one place.
+
+This helps in a few key ways:
+
+- **Separation of concerns** → UI and business logic don’t get mixed  
+- **Complex logic stays centralized** → workflows, validation, and rules live in one place  
+- **Better team workflow** → frontend and backend can be developed independently  
+- **Future flexibility** → the same backend can support multiple clients (web + mobile app)   
+
+This setup provides a more structured way to manage all of this as the system grows.
+
+*Image of the architecture:*
+<Image 
+  src="/architecture.png" 
+  alt="architecture" 
+  width={800} 
+  height={500} 
+/>
+
+---
+
+## Database design
+
+When you think about: 
+- users being associated with a particular flat and society
+- payments and invoices being associated with a user
+
+It becomes a no-brainer and using a relational database becomes the obvious choice. 
+
+One thing I didn’t want was system built for just *one* society as FlatMate is meant to work across many.
+
+Hence, the DB is structured the database around a **core idea**:
+
+> Every entity belongs to a society.
+
+So there’s a top-level `society` entity, and everything else users, flats, invoices, notices, and charges links back to it using a `society_id`.
+
+This creates a **multi-tenant system**:
+- one platform  
+- one database  
+- multiple societies co-existing cleanly 
+
+---
+
+## Why not a separate database per society?
+
+This was something I actually thought about.
+
+Technically, giving each society its own database could:
+- isolate data better  
+- slightly improve query performance  
+
+But it also:
+- increases infrastructure complexity  
+- increases cost  
+- requires managing multiple database instances  
+- complicates onboarding and migrations  
+
+This keeps the system simpler and more cost-effective in the early stages, while still being scalable. If required later, this can evolve into a more isolated setup (like per-society databases) for larger use cases.
+
+---
+
+## Onboarding 
+
+> So what happens when a society wants to use FlatMate?
+
+In that case, we need to : 
+- collect their existing records (flats, residents, charges)  
+- map them to the schema 
+- import them into the database  
+
+This makes onboarding much faster and realistic.
+
+---
+
+Still a work in progress, but this is the direction I’m building towards.
